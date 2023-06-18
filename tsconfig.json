@@ -1,0 +1,13 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es2015",
+    "jsx": "react",
+    "noEmit": true,
+    "importHelpers": true,
+    "moduleResolution": "node"
+  },
+  "typeRoots": ["./@types"],
+  "exclude": ["node_modules"]
+}
