@@ -35,7 +35,9 @@ const SearchGroup: React.FC<SearchGroupProps> = props => {
             color={colors.neutralGray['400']}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate(Screens.NOTIFICATIONS)}>
           {/* navigate the user to the nofications screen */}
           <Badge placement="top-right" />
           <IonicIcons

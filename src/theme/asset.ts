@@ -3,6 +3,11 @@ import authLogo from '../../assets/images/auth-logo.png';
 import google from '../../assets/images/Google.png';
 import facebook from '../../assets/images/Facebook.png';
 
+// notifications
+import offer from '../../assets/images/offer.png';
+import feed from '../../assets/images/feed.png';
+import activity from '../../assets/images/activity.png';
+
 // bg images
 import bg1 from '../../assets/images/bg-1.png';
 import Banner1 from '../../assets/images/banner1.png';
@@ -30,6 +35,9 @@ import FSNikeAirMax270 from '../../assets/products/fs.png';
 
 export {
   bg1,
+  feed,
+  activity,
+  offer,
   Banner1,
   Banner2,
   authLogo,

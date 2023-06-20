@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import {Screens} from '../screens';
+import {HIDDEN_HOME_TABS, Screens} from '../screens';
 import {colors} from 'src/theme/global/colors';
 import TabBarLabel from '../tab-bar-label';
 import TabBarIcon from '../tab-bar-icon';
@@ -12,7 +12,7 @@ import OffersStack from './offer.stack';
 import CartStack from './cart.stack';
 import AccountStack from './account.stack';
 import ExploreStack from './category.stack';
-import {getFocusedRouteNameFromRoute} from '@react-navigation/native';
+import tabVissiblity from 'src/utils/tab-vissibility';
 
 const Tab = createBottomTabNavigator();
 function AppTabs() {
@@ -38,23 +38,7 @@ function AppTabs() {
         component={HomeStack}
         options={({route}) => ({
           tabBarIcon: props => <TabBarIcon {...props} name="home-outline" />,
-          tabBarStyle: (Route => {
-            // make this function reusable
-            const routeName = (getFocusedRouteNameFromRoute(Route) ??
-              '') as Screens;
-            if (
-              [
-                Screens.HOME_OFFER,
-                Screens.FAVOURITES,
-                Screens.NOTIFICATION,
-                Screens.PRODUCT_DETAIL,
-                Screens.REVIEW,
-              ].includes(routeName)
-            ) {
-              return {display: 'none'};
-            }
-            return;
-          })(route),
+          tabBarStyle: tabVissiblity(HIDDEN_HOME_TABS)(route),
         })}
       />
       <Tab.Screen

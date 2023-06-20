@@ -13,9 +13,11 @@ export enum Screens {
   HOME = 'Home Screen',
   HOME_OFFER = 'Home Offer',
   FAVOURITES = 'Favorites',
-  NOTIFICATION = 'Notification',
+  NOTIFICATIONS = 'Notifications',
+  SINGLE_NOTIFICATION = 'Single Notification',
   PRODUCT_DETAIL = 'Product Detail',
-  REVIEW = 'Review',
+  REVIEWS = 'Reviews',
+  CREATE_REVIEW = 'New Features',
   // ACCOUNT SCREENS
   SETTINGS = 'Settings',
   PROFILE = 'Profile',
@@ -27,7 +29,8 @@ export enum Screens {
   SHIPPING_LIST = 'Shipping List',
   PAYMENTS_LIST = 'Payments List',
   SINGLE_PAYMENT_LIST = 'Single Payment List',
-  CART_SUCCESS = 'Cart Success', // modal
+  CART_SUCCESS = 'Cart Success',
+
   // CATEGORY SCREENS
   CATEGORIES = 'Categories',
   SEARCH_RESULTS = 'Search Results',
@@ -37,3 +40,13 @@ export enum Screens {
   //OFFER SCREENS
   OFFERS = 'Offers',
 }
+
+export const HIDDEN_HOME_TABS = [
+  Screens.HOME_OFFER,
+  Screens.FAVOURITES,
+  Screens.NOTIFICATIONS,
+  Screens.SINGLE_NOTIFICATION,
+  Screens.PRODUCT_DETAIL,
+  Screens.REVIEWS,
+  Screens.CREATE_REVIEW,
+];
