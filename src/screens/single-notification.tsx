@@ -21,7 +21,7 @@ const SingleNotificationScreen = ({navigation}: any) => {
       />
       <HDivider />
       <Section>
-        <Section.Body>
+        <Section.Body allowPaddingRight>
           {type === 'Offer' && <OfferList />}
           {type === 'Activity' && <ActivityList />}
           {type === 'Feed' && <FeedList />}

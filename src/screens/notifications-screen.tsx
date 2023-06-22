@@ -28,13 +28,13 @@ const NotificationsScreen = ({navigation}: any) => {
           <NotificationItem
             image={offer}
             title="Offer"
-            total={200}
+            total={20}
             onPress={() => onPush('Offer')}
           />
           <NotificationItem
             image={feed}
             title="Feed"
-            total={1}
+            total={11}
             onPress={() => onPush('Feed')}
           />
           <NotificationItem
