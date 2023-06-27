@@ -1,5 +1,6 @@
 import {Category} from './category.class';
 import {Product} from './product.class';
+import {Shipping} from './shipping';
 import {
   ManPants,
   ManShiert,
@@ -18,6 +19,7 @@ import {
 import {ICategory} from '../interfaces/category.interface';
 import {IProduct} from '../interfaces/product.interface';
 import {FSNikeAirMax270} from 'src/theme/asset';
+import {IShipping} from '../interfaces/shipping';
 
 export class AppRepository {
   static instance: AppRepository;
@@ -25,11 +27,13 @@ export class AppRepository {
   colors: string[] = ['red', 'green', 'yellow', 'purple', 'orange'];
   categories: ICategory[] = [];
   products: IProduct[] = [];
+  shipping: IShipping[] = [];
 
   private constructor() {
     this.categories = this.getCategories();
     // replace this logic later on
     this.products = this.getProducts();
+    this.shipping = this.getShipping();
   }
 
   public static getInstance(): AppRepository {
@@ -72,5 +76,36 @@ export class AppRepository {
       full_description:
         'The Nike Air Max 270 React ENG combines a full-length React foam midsole with a 270 Max Air unit for unrivaled comfort and a striking visual experience.',
     }));
+  }
+
+  private getShipping(): Shipping[] {
+    return [
+      {
+        _id: '1',
+        country: 'Nigeria',
+        state: 'Abuja',
+        city: 'Gwanjagba',
+        first_name: 'Junior',
+        last_name: 'Fipro',
+        phone_code: '+234',
+        phone_number: '09039714793',
+        street_address_1: '3711 Spring Hill Rd avenue',
+        street_address_2: '',
+        zip: '1245-987',
+      },
+      {
+        _id: '2',
+        country: 'Ghanan',
+        state: 'Accra',
+        city: 'Asmaoh',
+        first_name: 'Jane',
+        last_name: 'Brown',
+        phone_code: '+2',
+        phone_number: '9087645324',
+        street_address_1: '35b, Manualla avenue',
+        street_address_2: 'off banklook avenue',
+        zip: '1245-987',
+      },
+    ];
   }
 }

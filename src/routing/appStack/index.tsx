@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import {HIDDEN_HOME_TABS, Screens} from '../screens';
+import {HIDDEN_CART_TABS, HIDDEN_HOME_TABS, Screens} from '../screens';
 import {colors} from 'src/theme/global/colors';
 import TabBarLabel from '../tab-bar-label';
 import TabBarIcon from '../tab-bar-icon';
@@ -23,13 +23,12 @@ function AppTabs() {
         headerShown: false,
         tabBarLabel: TabBarLabel,
         tabBarStyle: {
-          height: 50,
-          paddingTop: 5,
           justifyContent: 'center',
           alignContent: 'center',
           backgroundColor: 'white',
           borderTopColor: colors.neutralLight['400'],
         },
+        unmountOnBlur: true,
         tabBarActiveTintColor: colors.primary['400'],
         tabBarInactiveTintColor: colors.neutralGray['400'],
       }}>
@@ -51,14 +50,15 @@ function AppTabs() {
       <Tab.Screen
         name={Screens.CART_TAB}
         component={CartStack}
-        options={{
+        options={({route}) => ({
           tabBarBadge: 2,
           tabBarBadgeStyle: {
             color: '#fff',
             backgroundColor: colors.secondary['400'],
           },
           tabBarIcon: props => <TabBarIcon {...props} name="cart-outline" />,
-        }}
+          tabBarStyle: tabVissiblity(HIDDEN_CART_TABS)(route),
+        })}
       />
       <Tab.Screen
         name={Screens.OFFER_TAB}

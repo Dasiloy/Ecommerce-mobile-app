@@ -33,9 +33,21 @@ import WomanBikini from '../../assets/categories/woman/woman-bikini.png';
 // products
 import FSNikeAirMax270 from '../../assets/products/fs.png';
 
+// finance
+import bank from '../../assets/images/Bank.png';
+import paypal from '../../assets/images/Paypal.png';
+import card from '../../assets/images/Card.png';
+import slidecard1 from '../../assets/images/slid-card-1.png';
+
+// others
+import successIcon from '../../assets/images/success-icon.png';
+
 export {
   bg1,
   feed,
+  card,
+  bank,
+  paypal,
   activity,
   offer,
   Banner1,
@@ -45,6 +57,7 @@ export {
   facebook,
   ManPants,
   ManShoes,
+  slidecard1,
   ManTShirts,
   ManUnderwears,
   ManShiert,
@@ -56,5 +69,6 @@ export {
   WomanPants,
   WomanSkirts,
   WomanTShirts,
+  successIcon,
   FSNikeAirMax270,
 };

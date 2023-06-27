@@ -26,11 +26,9 @@ export enum Screens {
   PAYMENTS = 'Payments',
   //CART SCREENS
   CART = 'Cart Screen',
-  SHIPPING_LIST = 'Shipping List',
-  PAYMENTS_LIST = 'Payments List',
-  SINGLE_PAYMENT_LIST = 'Single Payment List',
-  CART_SUCCESS = 'Cart Success',
-
+  CART_SHIPPING_LIST = 'Shipping List',
+  CART_PAYMENTS_LIST = 'Payments List',
+  CART_CARD_LIST = 'Cart Card List',
   // CATEGORY SCREENS
   CATEGORIES = 'Categories',
   SEARCH_RESULTS = 'Search Results',
@@ -49,4 +47,10 @@ export const HIDDEN_HOME_TABS = [
   Screens.PRODUCT_DETAIL,
   Screens.REVIEWS,
   Screens.CREATE_REVIEW,
+];
+
+export const HIDDEN_CART_TABS = [
+  Screens.CART_CARD_LIST,
+  Screens.CART_PAYMENTS_LIST,
+  Screens.CART_SHIPPING_LIST,
 ];

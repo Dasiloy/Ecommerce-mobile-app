@@ -1,16 +1,18 @@
 import React from 'react';
 import Section from 'src/base/section';
-import {Button, Input, ScrollView} from 'native-base';
+import {Button, ScrollView} from 'native-base';
 import CartItem from 'src/general/cart-item';
 import ScreenLayout from 'src/layout/screen';
 import HDivider from 'src/base/divider/h-divider';
+import CartInfoBox from 'src/general/cart-info-box';
+import InlineInput from 'src/base/inputs/inline-input';
 import PageNavigator from 'src/general/page-navigator';
 import {AppRepository} from 'src/tyopescript/classes/app.class';
-import CartInfoBox from 'src/general/cart-info-box';
+import {Screens} from 'src/routing/screens';
 
 const app = AppRepository.getInstance();
 
-const CartScreen = () => {
+const CartScreen = ({navigation}: any) => {
   return (
     <ScreenLayout>
       <PageNavigator text="Your Cart" />
@@ -19,22 +21,17 @@ const CartScreen = () => {
         <Section pb="4">
           <Section.Body allowPaddingRight>
             {/* Cart List */}
-            {app.products.slice(0, 5).map(p => (
+            {app.products.slice(0, 3).map(p => (
               <CartItem product={p} key={p._id} />
             ))}
-            <Input
-              mt="4"
-              type="text"
-              InputRightElement={
-                <Button size="md" rounded="none" w="25%" h="full">
-                  Aplly
-                </Button>
-              }
-              placeholder="Enter Cupon Code"
-            />
+            <InlineInput mt="4" />
             {/* shopping cart calculation here */}
             <CartInfoBox />
-            <Button mt="4">Check Out</Button>
+            <Button
+              onPress={() => navigation.navigate(Screens.CART_SHIPPING_LIST)}
+              mt="4">
+              Check Out
+            </Button>
           </Section.Body>
         </Section>
       </ScrollView>

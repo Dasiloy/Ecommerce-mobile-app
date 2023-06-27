@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'src/base/slider';
-import {bg1} from 'src/theme/asset';
+import {Banner1, Banner2, bg1} from 'src/theme/asset';
+
 import ScreenLayout from 'src/layout/screen';
 import SearchGroup from 'src/general/search-group';
 import HDivider from 'src/base/divider/h-divider';
@@ -26,7 +27,7 @@ const HomeScreen = ({navigation}: any) => {
         {/* Carousel Section  */}
         <Section pt="4">
           <Section.Body allowPaddingRight>
-            <Slider />
+            <Slider data={[Banner1, Banner2]} />
           </Section.Body>
         </Section>
         {/*  Category section*/}

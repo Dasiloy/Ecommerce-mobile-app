@@ -16,7 +16,7 @@ const BackgroundImage: React.FC<BackgroundImageProps> = ({
   return (
     <ImageBackground
       source={source}
-      resizeMode="cover"
+      resizeMode="contain"
       style={style ? [styles.image, style] : styles.image}
       {...rest}
     />
